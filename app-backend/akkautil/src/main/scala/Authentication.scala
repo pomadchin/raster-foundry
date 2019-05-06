@@ -237,11 +237,11 @@ trait Authentication extends Directives with LazyLogging {
       }
     )
 
-    val userRole = getStringClaimOrBlank(jwtClaims,
-      "https://app.rasterfoundry.com;platformRole"
-    ).toUpperCase match {
+    val userRole = getStringClaimOrBlank(
+      jwtClaims,
+      "https://app.rasterfoundry.com;platformRole").toUpperCase match {
       case "ADMIN" => GroupRole.Admin
-      case _ => GroupRole.Member
+      case _       => GroupRole.Member
     }
 
     for {
