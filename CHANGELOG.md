@@ -3,6 +3,7 @@
 ## [Unreleased](https://github.com/raster-foundry/raster-foundry/tree/develop)
 
 ### Added
+- Added job to backfill low-zoom overviews for existing project layers [\#4970](https://github.com/raster-foundry/raster-foundry/pull/4970)
 
 ### Changed
 
