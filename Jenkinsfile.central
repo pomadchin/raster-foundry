@@ -52,7 +52,7 @@ node {
         wrap([$class: 'AnsiColorBuildWrapper']) {
           sh """#!/bin/bash
             docker-compose \
-                -f "${DIR}/../docker-compose.test.yml" \
+                -f docker-compose.test.yml \
                 run --rm --no-deps --entrypoint "bash -c" \
                 -e SONATYPE_USERNAME="${SONATYPE_USERNAME}" \
                 -e SONATYPE_PASSWORD="${SONATYPE_PASSWORD}" \
@@ -68,7 +68,7 @@ node {
         }
       }
     }
-    
+
     slackMessage = "*<https://github.com/raster-foundry/raster-foundry/tree/${params.RELEASE_TAG}|${params.RELEASE_TAG}>* deployed to Maven Central :tada:"
     slackSend color: 'warning', message: slackMessage
   } catch(err) {
